@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jamuan Agung</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                color: #333;
+                background-color: #FFF8DC;
+            }
+
+            nav {
+                background-color: #1E90FF;
+                padding: 1rem;
+                display: flex;
+                gap: 2rem;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            nav a {
+                color: white;
+                text-decoration: none;
+                cursor: pointer;
+                font-weight: bold;
+                transition: 0.3s;
+            }
+
+            nav a:hover {
+                color: #00BFFF;
+                transform: scale(1.1);
+            }
+
+            .page {
+                display: none;
+                padding: 2rem;
+            }
+
+            .page.active {
+                display: block;
+            }
+
+            h1 {
+                color: #1E90FF;
+                margin-bottom: 1rem;
+            }
+
+            h2 {
+                color: #0047AB;
+                margin-top: 1.5rem;
+            }
+
+            .menu-item {
+                background: #FFFACD;
+                padding: 1rem;
+                margin: 1rem 0;
+                border-left: 4px solid #1E90FF;
+                border-radius: 5px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            }
+        </style>
+    </head>
+
+    <body>
+        <nav>
+            <a onclick="showPage('home')">Home</a>
+            <a onclick="showPage('menu')">Menu</a>
+            <a onclick="showPage('schedule')">Schedule</a>
+            <a onclick="showPage('Library')">Japan Library</a>
+        </nav>
+
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <h1>Jamuan Agung</h1>
+            <p>Welcome to our grand feast celebration. Experience authentic cuisine and cultural traditions.</p>
+        </div>
+
+        <!-- Menu Page -->
+        <div id="menu" class="page">
+            <h1>Menu</h1>
+            <div class="menu-item">
+                <h2>Appetizers</h2>
+                <p>Delicious starters to begin your feast</p>
+            </div>
+            <div class="menu-item">
+                <h2>Main Courses</h2>
+                <p>Traditional and contemporary main dishes</p>
+            </div>
+            <div class="menu-item">
+                <h2>Desserts</h2>
+                <p>Sweet treats to end your meal</p>
+            </div>
+        </div>
+
+        <!-- Schedule Page -->
+        <div id="schedule" class="page">
+            <h1>Event Schedule</h1>
+            <p><strong>Date:</strong> [Your Date]</p>
+            <p><strong>Time:</strong> [Your Time]</p>
+            <p><strong>Location:</strong> [Your Location]</p>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="Library" class="page">
+            <h1>Japan Library</h1>
+            <p><a href="Hiragana & Katakana.html">Hiragana & Katakana</a></p>
+            <p>Email: info@jamuanagung.com</p>
+            <p>Phone: +1-234-567-8900</p>
+        </div>
+
+        <script>
+            function showPage(pageId) {
+                const pages = document.querySelectorAll('.page');
+                pages.forEach(page => page.classList.remove('active'));
+                document.getElementById(pageId).classList.add('active');
+            }
+        </script>
+    </body>
+
+</html>
