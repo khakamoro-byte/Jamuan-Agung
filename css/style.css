@@ -1,0 +1,28 @@
+.navbar {
+  position: fixed;      /* stays at top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #007BFF; /* bright blue */
+  padding: 10px 0;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2); /* subtle shadow */
+  z-index: 1000;
+}
+
+.navbar a {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 25px; /* makes it look like a pill button */
+  background-color: #3399FF; /* slightly lighter blue for links */
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.navbar a:hover {
+  background-color: #66B2FF; /* brighter blue on hover */
+  transform: translateY(-3px); /* slight lifting effect */
+}
