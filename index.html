@@ -6,22 +6,54 @@
   <title>Japanese Kana Study Chart</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
 
 <!-- ================= Navbar ================= -->
 <div class="navbar">
-  <a href="#kana">Kana</a>
-  <a href="#dakuten">Dakuten</a>
-  <a href="#yoon">Yōon</a>
+  <div class="shortcuts">
+    <a href="#kana">
+      <span class="en">Kana</span>
+      <span class="ja">仮名</span>
+      <span class="id">Kana</span>
+    </a>
+    <a href="#dakuten">
+      <span class="en">Dakuten</span>
+      <span class="ja">濁点</span>
+      <span class="id">Dakuten</span>
+    </a>
+    <a href="#yoon">
+      <span class="en">Yōon</span>
+      <span class="ja">拗音</span>
+      <span class="id">Yōon</span>
+    </a>
+  </div>
+  <div class="language">
+    <label for="languageSelect">
+      <span class="en">Language:</span>
+      <span class="ja">言語:</span>
+      <span class="id">Bahasa:</span>
+    <select id="languageSelect" onchange="switchLanguage(this.value)">
+      <option value="en">English</option>
+      <option value="ja">日本語</option>
+      <option value="id">Nusantara</option>
+    </select>
+  </div>
 </div>
 
-<h1>Japanese Kana Study Chart</h1>
+<body>
+<h1>
+  <span class="en">Japanese Kana Study Chart</span>
+  <span class="ja">日本語の仮名学習チャート</span>
+  <span class="id">Tabel Belajar Kana Jepang</span>
+</h1>
 
 <div class="container">
-
   <!-- ================= HIRAGANA ================= -->
   <div class="card">
-    <h2 id="kana">Hiragana</h2>
+    <h2 id="kana">
+      <span class="en">Hiragana</span>
+      <span class="ja">ひらがな</span>
+      <span class="id">Hiragana</span>
+    </h2>
     <table>
       <tr><th></th><th>a</th><th>i</th><th>u</th><th>e</th><th>o</th></tr>
       <tr><th></th><td>あ<span class="romaji">a</span></td><td>い<span class="romaji">i</span></td><td>う<span class="romaji">u</span></td><td>え<span class="romaji">e</span></td><td>お<span class="romaji">o</span></td></tr>
@@ -36,8 +68,12 @@
       <tr><th>w</th><td>わ<span class="romaji">wa</span></td><td></td><td></td><td></td><td>を<span class="romaji">wo</span></td></tr>
       <tr><th>n</th><td colspan="5">ん<span class="romaji">n</span></td></tr>
     </table>
-
-    <h3 id="dakuten">Dakuten / Handakuten</h3>
+    
+    <h3 id="dakuten">
+      <span class="en">Dakuten / Handakuten</span>
+      <span class="ja">濁点・半濁点</span>
+      <span class="id">Dakuten / Handakuten</span>
+    </h3>
     <table>
       <tr><td>が<span class="romaji">ga</span></td><td>ぎ<span class="romaji">gi</span></td><td>ぐ<span class="romaji">gu</span></td><td>げ<span class="romaji">ge</span></td><td>ご<span class="romaji">go</span></td></tr>
       <tr><td>ざ<span class="romaji">za</span></td><td>じ<span class="romaji">ji</span></td><td>ず<span class="romaji">zu</span></td><td>ぜ<span class="romaji">ze</span></td><td>ぞ<span class="romaji">zo</span></td></tr>
@@ -46,7 +82,11 @@
       <tr><td>ぱ<span class="romaji">pa</span></td><td>ぴ<span class="romaji">pi</span></td><td>ぷ<span class="romaji">pu</span></td><td>ぺ<span class="romaji">pe</span></td><td>ぽ<span class="romaji">po</span></td></tr>
     </table>
 
-    <h3 id="yoon">Yōon</h3>
+    <h3 id="yoon">
+      <span class="en">Yōon</span>
+      <span class="ja">拗音</span>
+      <span class="id">Yōon</span>
+    </h3>
     <table>
       <tr><td>きゃ<span class="romaji">kya</span></td><td>きゅ<span class="romaji">kyu</span></td><td>きょ<span class="romaji">kyo</span></td></tr>
       <tr><td>しゃ<span class="romaji">sha</span></td><td>しゅ<span class="romaji">shu</span></td><td>しょ<span class="romaji">sho</span></td></tr>
@@ -60,7 +100,11 @@
 
   <!-- ================= KATAKANA ================= -->
   <div class="card">
-    <h2 id="kana">Katakana</h2>
+    <h2 id="kana">
+      <span class="en">Katakana</span>
+      <span class="ja">カタカナ</span>
+      <span class="id">Katakana</span>
+    </h2>
     <table>
       <tr><th></th><th>a</th><th>i</th><th>u</th><th>e</th><th>o</th></tr>
       <tr><th></th><td>ア<span class="romaji">a</span></td><td>イ<span class="romaji">i</span></td><td>ウ<span class="romaji">u</span></td><td>エ<span class="romaji">e</span></td><td>オ<span class="romaji">o</span></td></tr>
@@ -76,7 +120,11 @@
       <tr><th>n</th><td colspan="5">ン<span class="romaji">n</span></td></tr>
     </table>
 
-    <h3 id="dakuten">Dakuten / Handakuten</h3>
+    <h3 id="dakuten">
+      <span class="en">Dakuten / Handakuten</span>
+      <span class="ja">濁点・半濁点</span>
+      <span class="id">Dakuten / Handakuten</span>
+    </h3>
     <table>
       <tr><td>ガ<span class="romaji">ga</span></td><td>ギ<span class="romaji">gi</span></td><td>グ<span class="romaji">gu</span></td><td>ゲ<span class="romaji">ge</span></td><td>ゴ<span class="romaji">go</span></td></tr>
       <tr><td>ザ<span class="romaji">za</span></td><td>ジ<span class="romaji">ji</span></td><td>ズ<span class="romaji">zu</span></td><td>ゼ<span class="romaji">ze</span></td><td>ゾ<span class="romaji">zo</span></td></tr>
@@ -85,7 +133,11 @@
       <tr><td>パ<span class="romaji">pa</span></td><td>ピ<span class="romaji">pi</span></td><td>プ<span class="romaji">pu</span></td><td>ペ<span class="romaji">pe</span></td><td>ポ<span class="romaji">po</span></td></tr>
     </table>
 
-    <h3 id="yoon">Yōon</h3>
+    <h3 id="yoon">
+      <span class="en">Yōon</span>
+      <span class="ja">拗音</span>
+      <span class="id">Yōon</span>
+    </h3>
     <table>
       <tr><td>キャ<span class="romaji">kya</span></td><td>キュ<span class="romaji">kyu</span></td><td>キョ<span class="romaji">kyo</span></td></tr>
       <tr><td>シャ<span class="romaji">sha</span></td><td>シュ<span class="romaji">shu</span></td><td>ショ<span class="romaji">sho</span></td></tr>
@@ -96,7 +148,9 @@
       <tr><td>リャ<span class="romaji">rya</span></td><td>リュ<span class="romaji">ryu</span></td><td>リョ<span class="romaji">ryo</span></td></tr>
     </table>
   </div>
-
 </div>
+
+<script src="js/script.js"></script>
+
 </body>
 </html>
