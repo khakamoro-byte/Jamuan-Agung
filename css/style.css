@@ -1,3 +1,11 @@
+/* ==========================
+   Japanese Kana Study Chart
+   Bright Blue Theme & Static Tables
+========================== */
+html {
+  scroll-behavior: smooth;
+}
+
 .navbar {
   position: fixed;      /* stays at top */
   top: 0;
@@ -25,4 +33,90 @@
 .navbar a:hover {
   background-color: #66B2FF; /* brighter blue on hover */
   transform: translateY(-3px); /* slight lifting effect */
+}
+
+.navbar label {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+body {
+  margin: 0;
+  padding: 75px 0px 100px 0px; /* top | right | bottom | left */
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #e0f0ff, #b3d4ff); /* brighter blue gradient */
+  color: #222;
+}
+
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #0066cc; /* bright blue for title */
+}
+
+h2, h3 {
+  text-align: center;
+  margin-top: 20px;
+  color: #004a99; /* darker blue for headings */
+  scroll-margin-top: 100px; /* same as navbar height */
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0, 102, 204, 0.2); /* subtle blue shadow */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th, td {
+  border: 1px solid #99ccff;
+  padding: 10px;
+  text-align: center;
+  font-size: 22px;
+}
+
+th {
+  background: #cce6ff; /* bright blue header */
+  font-size: 15px;
+  color: #003366;
+}
+
+td {
+  background: #f0f8ff; /* light blue cell background */
+  color: #003366;
+}
+
+/* Static hover color only, no scale/flying */
+td:hover {
+  background: #99ccff; /* subtle bright blue on hover */
+  transform: none;     /* remove flying effect */
+}
+
+.romaji {
+  display: block;
+  font-size: 13px;
+  color: #0055aa; /* blue-ish romaji */
+  margin-top: 4px;
+}
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr; /* single column on small screens */
+  }
 }
