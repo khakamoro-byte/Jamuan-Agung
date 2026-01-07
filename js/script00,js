@@ -1,0 +1,90 @@
+let hiraganaData = [];
+let currentQuestion = null;
+
+let totalQuestions = 20;
+let currentCount = 0;
+let score = 0;
+
+const kanaEl = document.getElementById("kana");
+const choicesEl = document.querySelectorAll(".choice");
+const resultEl = document.getElementById("result");
+const scoreEl = document.getElementById("score");
+const progressEl = document.getElementById("progress");
+
+fetch("./json/hiragana.json")
+  .then(res => res.json())
+  .then(data => {
+    hiraganaData = data;
+    nextQuestion();
+  });
+
+function nextQuestion() {
+  if (currentCount >= totalQuestions) {
+    endQuiz();
+    return;
+  }
+
+  currentCount++;
+  progressEl.textContent = `Question ${currentCount} / ${totalQuestions}`;
+
+  currentQuestion =
+    hiraganaData[Math.floor(Math.random() * hiraganaData.length)];
+
+  kanaEl.textContent = currentQuestion.kana;
+  resultEl.textContent = "";
+
+  const answers = generateChoices(currentQuestion.romaji);
+  choicesEl.forEach((btn, i) => {
+    btn.textContent = answers[i];
+    btn.disabled = false;
+  });
+}
+
+function generateChoices(correct) {
+  const choices = new Set();
+  choices.add(correct);
+
+  while (choices.size < 4) {
+    const random =
+      hiraganaData[Math.floor(Math.random() * hiraganaData.length)].romaji;
+    choices.add(random);
+  }
+
+  return shuffle([...choices]);
+}
+
+function shuffle(array) {
+  return array.sort(() => Math.random() - 0.5);
+}
+
+choicesEl.forEach(button => {
+  button.addEventListener("click", () => {
+    checkAnswer(button.textContent);
+  });
+});
+
+function checkAnswer(selected) {
+  choicesEl.forEach(btn => (btn.disabled = true));
+
+  if (selected === currentQuestion.romaji) {
+    score++;
+    resultEl.textContent = "✅ Correct!";
+    resultEl.style.color = "green";
+  } else {
+    resultEl.textContent =
+      `❌ Wrong! Correct: ${currentQuestion.romaji}`;
+    resultEl.style.color = "red";
+  }
+
+  scoreEl.textContent = `Score: ${score}`;
+  setTimeout(nextQuestion, 1000);
+}
+
+function endQuiz() {
+  kanaEl.textContent = "🎉 Quiz Finished!";
+  resultEl.textContent = `Final Score: ${score} / ${totalQuestions}`;
+  resultEl.style.color = "blue";
+  progressEl.textContent = "";
+
+  choicesEl.forEach(btn => (btn.style.display = "none"));
+}
