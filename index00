@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="css/style00.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kana Quiz Page</title>
+</head>
+<body>
+  <p><a href="index.html">Library</a></p>
+
+  <h1>Hiragana Quiz</h1>
+
+<p id="progress">Question 1 / 20</p>
+<p id="score">Score: 0</p>
+
+  <div class="quiz-box">
+    <div id="kana">Loading...</div>
+    <div id="choices">
+      <button class="choice"></button>
+      <button class="choice"></button>
+      <button class="choice"></button>
+      <button class="choice"></button>
+    </div>
+  
+    <p id="result"></p>
+  </div>
+ 
+
+</body>
+
+<script src="js/script00.js"></script>
+</html>
